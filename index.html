@@ -1,37 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Meu Site</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos do Dropdown */
+    .dropdown { position: relative; width: 200px; margin-top: 20px; }
+    .dropdown button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .dropdown button:hover { background-color: #0056b3; }
+    .dropdown-content { display: none; position: absolute; background-color: white; border: 1px solid #ddd; border-radius: 5px; width: 100%; margin-top: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .dropdown-content a { padding: 10px; display: block; text-decoration: none; color: #333; }
+    .dropdown-content a:hover { background-color: #f1f1f1; }
+    .dropdown.show .dropdown-content { display: block; }
+  </style>
 </head>
 <body>
   <header>
     <h1>PCI</h1>
     <p>Quem ta é nóis</p>
-  </header>
-
-  <main>
+  </header>  <main>
     <h2>Primeiro Convivio Indigena</h2>
     <p>Louça lavada evita paulada 😄</p>
     <h3>REGRAS DA COMUNIDADE</h3>
-    
-     <li>1 - Roubar</li>
-     <li>2 - Matar</li>
-     <li>3 - Traficar</li>
-     <li>4 - Contrabandiar</li>
+    <ul>
+      <li>1 - Roubar</li>
+      <li>2 - Matar</li>
+      <li>3 - Traficar</li>
+      <li>4 - Contrabandiar</li>
+    </ul><div class="dropdown">
+  <button onclick="toggleDropdown()">Selecionar Opção</button>
+  <div class="dropdown-content" id="dropdownMenu">
+    <a href="#">Opção 1</a>
+    <a href="#">Opção 2</a>
+    <a href="#">Opção 3</a>
+  </div>
+</div>
 
-      <audio controls>
-    <source src="505.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-    </p>
-  </main>
-  <button onclick="window.open('https://wallhaven.cc/w/jx632y', '_blank')">DESPERTE</button>
+  </main><button onclick="window.open('https://wallhaven.cc/w/jx632y', '_blank')">DESPERTE</button>
+
   <footer>
     <img src="wallhaven-jx632y.jpg" alt="olha o ian ai" width="1600">
     <p>&copy; 2025 - PCI ltda</p>
-  </footer>
-</body>
+  </footer>  <script>
+    function toggleDropdown() {
+      document.querySelector('.dropdown').classList.toggle('show');
+    }
 
-
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown button')) {
+        document.querySelector('.dropdown').classList.remove('show');
+      }
+    }
+  </script></body>
+</html>
